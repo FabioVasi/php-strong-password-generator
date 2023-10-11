@@ -96,7 +96,7 @@ include __DIR__ . '/functions.php';
                     </form>
 
                     <div class="container">
-                        <h3>La tua password é : <?php echo generatePassword($passwordGenerator); ?></h3>
+                        <h5>La tua password é : <?php echo generatePassword($passwordGenerator); ?></h5>
                     </div>
 
                 </div>
