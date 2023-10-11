@@ -17,7 +17,28 @@ Milestone 4 (BONUS)
 Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli. Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme). Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali.
 */
 
-$passwordGenerator = $_GET[''];
+$passwordGenerator = $_GET['characters'];
+
+if (isset($_GET['characters'])) {
+    var_dump(str_contains($passwordGenerator, 'allow'));
+    var_dump(str_contains($passwordGenerator, 'letters'));
+    var_dump(str_contains($passwordGenerator, 'numbers'));
+    var_dump(str_contains($passwordGenerator, 'symbols'));
+
+    if (str_contains($passwordGenerator, 'allow') || str_contains($passwordGenerator, 'letters') || str_contains($passwordGenerator, 'numbers') || str_contains($passwordGenerator, 'symbols')) {
+        var_dump('password is being generated');
+        $alert = [
+            'color' => 'success',
+            'message' => 'Your password is: ' . $passwordGenerator 
+        ];
+    } else {
+        var_dump('password cannot be generated');
+        $alert = [
+            'color' => 'danger',
+            'message' => 'Password cannot be generated'
+        ];
+    }
+}
 
 var_dump($_GET);
 
