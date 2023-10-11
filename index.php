@@ -53,6 +53,18 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
                                     <label class="me-3 form-check-label" for="allow">Si</label>
                                     <input class="me-1 form-check-input" type="radio" name="allow" id="no_allow" value="0">
                                     <label class="me-3 form-check-label" for="no_allow">No</label>
+                                    <div class="pt-3">
+                                        <input name="letters" id="letters" type="checkbox">
+                                        <label for="letters">Lettere</label>
+                                    </div>
+                                    <div class="pt-2">
+                                        <input name="numbers" id="numbers" type="checkbox">
+                                        <label for="numbers">Numeri</label>
+                                    </div>
+                                    <div class="pt-2">
+                                        <input name="symbols" id="symbols" type="checkbox">
+                                        <label for="symbols">Simboli</label>
+                                    </div>   
                                 </div>
                             </div> 
                         </div>
