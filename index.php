@@ -17,8 +17,25 @@ Milestone 4 (BONUS)
 Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli. Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme). Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali.
 */
 
-$passwordGenerator = strlen($_GET['characters']);
+$passwordGenerator = $_GET['characters'];
 
+function generatePassword(int $length) {
+
+    $passwordLength = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!“£$%&/()=é*§é*§°:';
+
+    $randomPassword = '';
+
+    for ($i = 0; $i < $length; $i++) {
+
+        $randomPassword .= substr($passwordLength, rand(0, (strlen($passwordLength))), 1);
+
+    };
+
+    return $randomPassword;
+
+}
+
+/*
 if (isset($_GET['characters'])) {
     var_dump(str_contains($passwordGenerator, 'allow'));
     var_dump(str_contains($passwordGenerator, 'letters'));
@@ -39,8 +56,7 @@ if (isset($_GET['characters'])) {
         ];
     }
 }
-
-var_dump($_GET);
+*/
 
 ?>
 
@@ -61,17 +77,6 @@ var_dump($_GET);
             <div class="col-2"></div>
             <div class="col-8">
                 <div class="card border-0 py-3">
-
-                    <?php if (isset($alert)) : ?>
-
-                        <div class="container">
-                            <div class="alert alert-<?= $alert['color']; ?>" role="alert">
-                                <strong>Password: </strong> <?= $alert['message']; ?>
-                            </div>
-                        </div>
-
-                    <?php endif; ?>
-
                     <form method="GET">
                         <div class="container text-start">
                             <div class="row">                    
@@ -84,7 +89,7 @@ var_dump($_GET);
                                     </div>
                                 </div>
                                 <div class="py-3 col-6">
-                                    <input class="d-block my-3" name="characters" id="characters" type="text">
+                                    <input class="d-block my-3" name="characters" id="characters" type="number">
                                     <input class="me-1 form-check-input" type="radio" name="allow" id="allow" value="1">
                                     <label class="me-3 form-check-label" for="allow">Si</label>
                                     <input class="me-1 form-check-input" type="radio" name="allow" id="no_allow" value="0">
@@ -105,6 +110,10 @@ var_dump($_GET);
                             </div> 
                         </div>       
                     </form>
+
+                    <div class="container">
+                        <h3>La tua password é : <?php echo generatePassword($passwordGenerator); ?></h3>
+                    </div>
 
                 </div>
             </div>
