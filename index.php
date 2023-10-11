@@ -17,7 +17,9 @@ Milestone 4 (BONUS)
 Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli. Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme). Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali.
 */
 
+$passwordGenerator = $_GET[''];
 
+var_dump($_GET);
 
 ?>
 
@@ -37,15 +39,18 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
         <div class="row">
             <div class="col-2"></div>
             <div class="col-8">
-                <div class="card py-3">
+                <div class="card border-0 py-3">
 
                     <form method="GET">
                         <div class="container text-start">
                             <div class="row">                    
                                 <div class="py-3 col-6">
-                                    
                                     <span class="d-block my-3"><label for="characters">Lunghezza password:</label></span>
                                     <span class="d-block">Consenti ripetizioni di uno o più caratteri: </span>
+                                    <div class="mt-5 pt-4">
+                                        <button class="btn btn-primary fw-bold" type="submit">Invia</button>
+                                        <button class="btn btn-secondary fw-bold" type="reset">Annulla</button>
+                                    </div>
                                 </div>
                                 <div class="py-3 col-6">
                                     <input class="d-block my-3" name="characters" id="characters" type="text">
@@ -67,8 +72,7 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
                                     </div>   
                                 </div>
                             </div> 
-                        </div>
-                           
+                        </div>       
                     </form>
 
                 </div>
