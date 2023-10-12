@@ -61,7 +61,7 @@ include __DIR__ . '/functions.php';
             <div class="col-2"></div>
             <div class="col-8">
                 <div class="card border-0 py-3">
-                    <form method="GET">
+                    <form action="/index.php" method="GET">
                         <div class="container text-start">
                             <div class="row">                    
                                 <div class="py-3 col-6">
